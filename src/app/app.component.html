@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Angular Pipes</h1>
+  <button class="btn" (click)="onTogleSearch($event)">{{searchField}}</button>
+  <!-- <button class="btn">TITLE</button> -->
+
+  <input type="text" [(ngModel)]="search" placeholder="поиск...">
+
+  <div class="card" *ngFor="let itemPost of posts | filters:search:searchField" >
+    <h2>{{itemPost.title}}</h2>
+    <h4>{{itemPost.text}}</h4>
+  </div>
+</div>
